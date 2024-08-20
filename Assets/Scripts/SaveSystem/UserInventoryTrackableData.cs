@@ -1,31 +1,41 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class UserInventoryTrackableData : MonoBehaviour
+public class UserInventoryTrackableData : MonoBehaviour 
 {
-    public bool TryLoad(TrackData<string> trackData,EItemType itemType)
+    public List<UserInventoryTrackData> UserInventoryDatas;
+
+    public bool TryLoad(string filePath)
     {
-        if(File.Exists(trackData.FilePath))
+        if(File.Exists(filePath))
         {
-            //trackData.LoadData();
-            Debug.Log("veriler yüklendi.");
+            Debug.Log("File is exist.");
             return true;
         }
         else
         {
-            Debug.LogWarning("kaydedilmiþ veri bulunamadý, yeni veri oluþturuluyor.");
-            return false; // yeni veri oluþtur
+            Debug.Log("File is not exist. Please create a new data file");
+            return false;
         }
     }
 
-    public void UpsertAccessoryCountByTypeAndLevel(TrackData<string> trackData, EItemType itemType, int count)
+    public void UpsertItemCountByType(UserInventoryTrackData trackData, EItemType itemType, int count, string filePath)
     {
         string trackId = itemType.ToString();
+        UserInventoryDatas.Add(new UserInventoryTrackData(trackId, count));
+        DataHandler.Instance.SaveToJson(UserInventoryDatas, filePath);
+        //Wrapper wrapper = new Wrapper();
+        //wrapper.Item = UserInventoryDatas;
+        //Debug.Log("Here it");
+        //string data = JsonUtility.ToJson(wrapper);
+        //File.WriteAllText(filePath, data);
+    }
 
-        UserInventoryTrackData userInventoryData =  new UserInventoryTrackData(trackId, count);
-        trackData.CreateUser(userInventoryData, "UserInventoryData.json");
-        trackData.SaveData();
+    [Serializable]
+    private class Wrapper
+    {
+        public List<UserInventoryTrackData> Item;
     }
 }

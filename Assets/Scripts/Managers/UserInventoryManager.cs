@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class UserInventoryManager : Singleton<UserInventoryManager>
 {
+    private string _filePath;
+
     [SerializeField] private UserInventoryTrackableData _userInventoryTrackableData;
     [SerializeField] private UserInventoryTrackData _userInventoryTrackData;
 
@@ -14,11 +15,14 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
 
     private void Init()
     {
-        foreach(var itemType in GameConfigManager.Instance.GetItemTypes())
+        _filePath = Path.Combine(Application.persistentDataPath, "UserInventoryData.json");
+
+        if(!_userInventoryTrackableData.TryLoad(_filePath))
         {
-            if(!_userInventoryTrackableData.TryLoad(_userInventoryTrackData, itemType))
+            var itemTypes = GameConfigManager.Instance.GetItemTypes();
+            for(int i = 0; i < itemTypes.Count; i++)
             {
-                _userInventoryTrackableData.UpsertAccessoryCountByTypeAndLevel(_userInventoryTrackData, itemType, 0);
+                _userInventoryTrackableData.UpsertItemCountByType(_userInventoryTrackData, itemTypes[i], 0, _filePath);
             }
         }
     }
