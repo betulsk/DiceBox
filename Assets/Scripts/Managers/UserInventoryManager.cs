@@ -6,7 +6,6 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
     private string _filePath;
 
     [SerializeField] private UserInventoryTrackableData _userInventoryTrackableData;
-    [SerializeField] private UserInventoryTrackData _userInventoryTrackData;
 
     private void Start()
     {
@@ -32,7 +31,6 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
         if(Input.GetKeyDown(KeyCode.D))
         {
             _userInventoryTrackableData.UpdateInventoryData(EItemType.Apple, 8, _filePath);
-
         }
     }
 }
