@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -12,6 +11,7 @@ public class UserInventoryTrackableData : MonoBehaviour
         if(File.Exists(filePath))
         {
             Debug.Log("File is exist.");
+            JSONDataIO.Instance.ReadFromJson<UserInventoryTrackData>(filePath);
             return true;
         }
         else
@@ -21,21 +21,22 @@ public class UserInventoryTrackableData : MonoBehaviour
         }
     }
 
-    public void UpsertItemCountByType(UserInventoryTrackData trackData, EItemType itemType, int count, string filePath)
+    public void UpsertItemCountByType(EItemType itemType, int count, string filePath)
     {
         string trackId = itemType.ToString();
         UserInventoryDatas.Add(new UserInventoryTrackData(trackId, count));
-        DataHandler.Instance.SaveToJson(UserInventoryDatas, filePath);
-        //Wrapper wrapper = new Wrapper();
-        //wrapper.Item = UserInventoryDatas;
-        //Debug.Log("Here it");
-        //string data = JsonUtility.ToJson(wrapper);
-        //File.WriteAllText(filePath, data);
+        JSONDataIO.Instance.SaveToJson(UserInventoryDatas, filePath);
     }
 
-    [Serializable]
-    private class Wrapper
+    public void UpdateInventoryData(EItemType itemType, int count, string filePath)
     {
-        public List<UserInventoryTrackData> Item;
+        foreach (var item in UserInventoryDatas)
+        {
+            if(item.TrackId == itemType.ToString())
+            {
+                item.Count = count;
+                JSONDataIO.Instance.SaveToJson(UserInventoryDatas, filePath);
+            }
+        }
     }
 }

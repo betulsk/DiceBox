@@ -22,8 +22,17 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
             var itemTypes = GameConfigManager.Instance.GetItemTypes();
             for(int i = 0; i < itemTypes.Count; i++)
             {
-                _userInventoryTrackableData.UpsertItemCountByType(_userInventoryTrackData, itemTypes[i], 0, _filePath);
+                _userInventoryTrackableData.UpsertItemCountByType(itemTypes[i], 0, _filePath);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            _userInventoryTrackableData.UpdateInventoryData(EItemType.Apple, 8, _filePath);
+
         }
     }
 }

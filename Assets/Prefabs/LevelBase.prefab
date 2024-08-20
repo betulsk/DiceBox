@@ -205,8 +205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userInventoryTrackableData: {fileID: 5681070707936009680}
   _userInventoryTrackData:
-    Count: 0
     TrackId: 
+    Count: 0
 --- !u!1 &2049549984193492356
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7176048529415387972}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: SystemsandManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ Transform:
   m_Children:
   - {fileID: 8041013996843619149}
   - {fileID: 8021722399403837944}
-  - {fileID: 2375236329264721580}
   - {fileID: 9100548146264468582}
+  - {fileID: 2375236329264721580}
   m_Father: {fileID: 3600835038050686182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
