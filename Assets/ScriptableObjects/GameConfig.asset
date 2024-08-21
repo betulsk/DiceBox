@@ -16,4 +16,13 @@ MonoBehaviour:
   TargetFrame: 60
   _boardLength: 10
   _boardMaxValue: 15
-  ItemTypes: 000000000100000002000000
+  ItemTypesToImages:
+    _pairs:
+    - _key: 0
+      _value: {fileID: 0}
+    - _key: 1
+      _value: {fileID: 21300000, guid: b7481a4c424715542a70ac1efc7468db, type: 3}
+    - _key: 2
+      _value: {fileID: 21300000, guid: 140169fe467b8b649aa2541e0c8d6c09, type: 3}
+    - _key: 3
+      _value: {fileID: 21300000, guid: 50dd2e8acaa7426438d693e39eb73026, type: 3}

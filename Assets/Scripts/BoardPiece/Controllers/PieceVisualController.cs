@@ -32,6 +32,4 @@ public class PieceVisualController : MonoBehaviour
         _pieceItemText.text = XSTR + _boardPiece.ItemCount + SPACE + _boardPiece.ItemType;
         _boardPiece.OnPieceCreated?.Invoke();
     }
-
-
 }
