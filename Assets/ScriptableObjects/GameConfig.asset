@@ -15,4 +15,5 @@ MonoBehaviour:
   IsDebug: 1
   TargetFrame: 60
   _boardLength: 10
+  _boardMaxValue: 15
   ItemTypes: 000000000100000002000000

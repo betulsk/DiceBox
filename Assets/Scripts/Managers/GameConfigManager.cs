@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameConfigManager : Singleton<GameConfigManager>
@@ -9,7 +9,7 @@ public class GameConfigManager : Singleton<GameConfigManager>
 
     internal List<EItemType> GetItemTypes()
     {
-        return GameConfig.ItemTypes;
+        return GameConfig.ItemTypesToImages.Dictionary.Keys.ToList();
     }
 
     private void Awake()
@@ -18,5 +18,20 @@ public class GameConfigManager : Singleton<GameConfigManager>
         {
             Application.targetFrameRate = GameConfig.TargetFrame;
         }
+    }
+
+    public int GetBoardLength()
+    {
+        return GameConfig.BoardLength;
+    }
+
+    public int GetBoardPieceMaxValue()
+    {
+        return GameConfig.BoardMaxValue;
+    }
+
+    public Sprite GetItemTypeToSprite(EItemType itemType)
+    {
+        return GameConfig.ItemTypesToImages.Dictionary[itemType];
     }
 }

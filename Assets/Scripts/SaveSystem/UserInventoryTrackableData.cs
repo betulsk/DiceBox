@@ -23,6 +23,11 @@ public class UserInventoryTrackableData : MonoBehaviour
 
     public void UpsertItemCountByType(EItemType itemType, int count, string filePath)
     {
+        if(itemType == EItemType.None)
+        {
+            return;
+        }
+
         string trackId = itemType.ToString();
         UserInventoryDatas.Add(new UserInventoryTrackData(trackId, count));
         JSONDataIO.Instance.SaveToJson(UserInventoryDatas, filePath);

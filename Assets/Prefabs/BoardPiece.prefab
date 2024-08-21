@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceItemImage: {fileID: 8164375872489938453}
   _pieceItemText: {fileID: 3781857133121737416}
+  _boardPiece: {fileID: 4073808169550399224}
 --- !u!1 &2819766468801933382
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,14 +385,14 @@ MonoBehaviour:
   m_fontSize: 0.15
   m_fontSizeBase: 0.15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0.1
+  m_fontSizeMax: 1
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -3.4
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -469,6 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313210a2a8e1a6a4baed3dd0fc155213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pieceVisualController: {fileID: 5503175141368260157}
 --- !u!1001 &2553395161877722624
 PrefabInstance:
   m_ObjectHideFlags: 0
