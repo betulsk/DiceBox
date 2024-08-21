@@ -19,6 +19,11 @@ public class DiceWidget : MonoBehaviour
 
     private void OnFirstFieldEndEdit(string arg0)
     {
+        if(arg0 != null)
+        {
 
+            Debug.Log("! " + arg0);
+
+        }
     }
 }
