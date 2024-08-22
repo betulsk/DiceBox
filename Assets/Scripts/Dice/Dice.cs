@@ -9,6 +9,7 @@ public struct DiceDatas
     public int SecondData;
     public bool FirstDataSet;
     public bool SecondDataSet;
+    public int TotalData;
 }
 
 public class Dice : MonoBehaviour
@@ -72,19 +73,18 @@ public class Dice : MonoBehaviour
         var randZ = UnityEngine.Random.Range(0f, 1f);
         _rigidbody.AddTorque(new Vector3(randX, randY, randZ) * (_rollForce + randomVariance), ForceMode.Impulse);
         Debug.Log("!Next step is anim");
-
-        StartCoroutine(this.WaitForSeconds(1f, () =>
+        GameManager.Instance.OnDiceStopped?.Invoke();
+        StartCoroutine(this.WaitForSeconds(5f, () =>
         {
             Debug.Log("!Anim must play");
             StopRolling();
-            _diceAnimationController.Animator.enabled = true;
-            _diceAnimationController.PlayAnim(EAnim.Dice_2);
+            //_diceAnimationController.Animator.enabled = true;
+            //_diceAnimationController.PlayAnim(EAnim.Dice_3);
         }));
     }
 
     public void StopRolling()
     {
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.angularVelocity = Vector3.zero;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

@@ -67,6 +67,7 @@ public class DiceWidget : MonoBehaviour
     {
         _firstInputField.interactable = false;
         _secondInputField.interactable = false;
+        GameManager.Instance.DiceDatas.TotalData = GameManager.Instance.DiceDatas.FirstData + GameManager.Instance.DiceDatas.SecondData;
         GameManager.Instance.OnDiceDataSet?.Invoke();
     }
 

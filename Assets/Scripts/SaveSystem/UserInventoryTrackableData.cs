@@ -11,7 +11,7 @@ public class UserInventoryTrackableData : MonoBehaviour
         if(File.Exists(filePath))
         {
             Debug.Log("File is exist.");
-            JSONDataIO.Instance.ReadFromJson<UserInventoryTrackData>(filePath);
+            UserInventoryDatas = JSONDataIO.Instance.ReadFromJson<UserInventoryTrackData>(filePath);
             return true;
         }
         else
@@ -39,7 +39,7 @@ public class UserInventoryTrackableData : MonoBehaviour
         {
             if(item.TrackId == itemType.ToString())
             {
-                item.Count = count;
+                item.Count += count;
                 JSONDataIO.Instance.SaveToJson(UserInventoryDatas, filePath);
             }
         }

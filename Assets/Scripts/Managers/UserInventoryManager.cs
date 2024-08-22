@@ -24,6 +24,16 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
                 _userInventoryTrackableData.UpsertItemCountByType(itemTypes[i], 0, _filePath);
             }
         }
+        else
+        {
+
+        }
+    }
+
+    public void UpdateInventoryData(EItemType itemType, int count)
+    {
+        _userInventoryTrackableData.UpdateInventoryData(itemType, count, _filePath);
+
     }
 
     private void Update()

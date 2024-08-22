@@ -5,8 +5,9 @@ public class BoardPiece : MonoBehaviour
 {
     private EItemType _itemType;
     private int _itemCount;
-    [SerializeField] private PieceVisualController _pieceVisualController;
 
+    [SerializeField] private PieceVisualController _pieceVisualController;
+    [SerializeField] private Transform _targetPoint;
     #region Getter/Setters
     public EItemType ItemType
     {
@@ -18,6 +19,12 @@ public class BoardPiece : MonoBehaviour
     {
         get { return _itemCount; }
         set { _itemCount = value; }
+    }
+
+    public Transform TargetPoint
+    {
+        get { return _targetPoint; }
+        set { _targetPoint = value; }
     }
     #endregion
 
