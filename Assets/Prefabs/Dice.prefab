@@ -347,8 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c6ed24d8486ae47a8d067cd6e129ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
-  _throwForce: 0
+  _diceAnimationController: {fileID: 3197184619962239181}
   _diceFaces:
   - {fileID: 883141308871853488}
   - {fileID: 1992365059679628795}
@@ -356,6 +355,9 @@ MonoBehaviour:
   - {fileID: 6210291810498438003}
   - {fileID: 4990510536138239649}
   - {fileID: 2523103605880579210}
+  _rigidbody: {fileID: 2738870713177533877}
+  _throwForce: 10
+  _rollForce: 4
 --- !u!1 &3871615803116300630
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +617,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4689745717259636, guid: 29161880b0c72c848a5ea5f7d2cf423f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689745717259636, guid: 29161880b0c72c848a5ea5f7d2cf423f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 55.482533
       objectReference: {fileID: 0}
@@ -653,7 +659,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6423863276426232142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1996f4631673a464aa28da26f3ca2d64, type: 2}
   m_CullingMode: 0
@@ -710,7 +716,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

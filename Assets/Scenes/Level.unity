@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InitBoardPiece
       objectReference: {fileID: 0}
+    - target: {fileID: 308551147961776336, guid: 4fef0121ee5da1842b8667cf852ae553, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.003
+      objectReference: {fileID: 0}
     - target: {fileID: 455982409622782825, guid: 4fef0121ee5da1842b8667cf852ae553, type: 3}
       propertyPath: m_Name
       value: LevelBase
