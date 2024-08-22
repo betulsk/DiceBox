@@ -1,6 +1,15 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public struct DiceDatas
+{
+    public int FirstData;
+    public int SecondData;
+    public bool FirstDataSet;
+    public bool SecondDataSet;
+}
 
 public class Dice : MonoBehaviour
 {
@@ -8,12 +17,27 @@ public class Dice : MonoBehaviour
     [SerializeField] private float _throwForce;
     [SerializeField] private List<Transform> _diceFaces;
 
+    private void Start()
+    {
+        GameManager.Instance.OnDiceDataSet += OnDiceDataSet;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.K))
         {
             GetNumberOnTop();
         }
+    }
+
+    private void OnDiceDataSet()
+    {
+        RollDice();
     }
 
     public void GetNumberOnTop()
@@ -35,9 +59,10 @@ public class Dice : MonoBehaviour
         }
     }
 
-    public void RollDice()
+    private void RollDice()
     {
-        _rigidbody.AddForce(transform.forward * (_throwForce + Random.Range(-1f, 1f)), ForceMode.Impulse);
+        //_rigidbody.AddForce(transform.forward * (_throwForce + UnityEngine.Random.Range(-1f, 1f)), ForceMode.Impulse);
+
     }
 
     public void StopRolling()

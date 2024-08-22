@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285179298866335821, guid: 4fef0121ee5da1842b8667cf852ae553, type: 3}
+      propertyPath: m_Name
+      value: InitBoardPiece
+      objectReference: {fileID: 0}
     - target: {fileID: 455982409622782825, guid: 4fef0121ee5da1842b8667cf852ae553, type: 3}
       propertyPath: m_Name
       value: LevelBase
