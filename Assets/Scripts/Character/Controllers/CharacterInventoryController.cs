@@ -5,6 +5,7 @@ public class CharacterInventoryController : MonoBehaviour
     private EItemType _itemType;
     private int _itemCount;
     [SerializeField] private Character _character;
+    [SerializeField] private ParticleSystem _starParticle;
 
     private void Start()
     {
@@ -19,7 +20,11 @@ public class CharacterInventoryController : MonoBehaviour
     private void OnMovementStop()
     {
         FindInventoryDatas();
-        UserInventoryManager.Instance.UpdateInventoryData(_itemType, _itemCount);
+        if(UserInventoryManager.Instance.TryUpgrade(_itemType))
+        {
+            UserInventoryManager.Instance.UpdateInventoryData(_itemType, _itemCount);
+            _starParticle.Play();
+        }
     }
 
     private void FindInventoryDatas()
@@ -27,4 +32,6 @@ public class CharacterInventoryController : MonoBehaviour
         _itemType = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex].ItemType;
         _itemCount = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex].ItemCount;
     }
+
+
 }

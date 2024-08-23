@@ -42,6 +42,15 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
         OnInventoryDataUpdated?.Invoke(itemType, _userInventoryTrackableData.UserInventoryDatas);
     }
 
+    public bool TryUpgrade(EItemType itemType)
+    {
+        if(itemType == EItemType.None)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public List<UserInventoryTrackData> GetInventoryDatas()
     {
         return _userInventoryTrackableData.UserInventoryDatas;
