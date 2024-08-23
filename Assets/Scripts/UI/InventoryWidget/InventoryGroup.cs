@@ -1,4 +1,3 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +5,7 @@ using UnityEngine.UI;
 public class InventoryGroup : MonoBehaviour
 {
     private Transform _initTransform;
-    private Coroutine _punchRoutine;
+
     [SerializeField] private EItemType _itemType;
     [SerializeField] private Image _inventoryIconImage;
     [SerializeField] private TMP_Text _inventoryAmountText;

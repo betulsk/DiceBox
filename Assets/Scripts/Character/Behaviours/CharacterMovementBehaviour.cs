@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class CharacterMovementBehaviour : BaseMovementBehaviour
 {
@@ -13,6 +12,7 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
 
     [SerializeField] private Character _character;
     [SerializeField] private ParticleSystem _dustParticle;
+
     [SerializeField] private float _jumpPower;
     [SerializeField] private float _movementSpeed = 10;
 

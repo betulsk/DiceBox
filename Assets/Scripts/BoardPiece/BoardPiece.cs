@@ -8,6 +8,7 @@ public class BoardPiece : MonoBehaviour
 
     [SerializeField] private PieceVisualController _pieceVisualController;
     [SerializeField] private Transform _targetPoint;
+
     #region Getter/Setters
     public EItemType ItemType
     {

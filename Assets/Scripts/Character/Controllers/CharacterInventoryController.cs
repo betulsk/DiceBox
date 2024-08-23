@@ -4,6 +4,7 @@ public class CharacterInventoryController : MonoBehaviour
 {
     private EItemType _itemType;
     private int _itemCount;
+
     [SerializeField] private Character _character;
     [SerializeField] private ParticleSystem _starParticle;
 
@@ -32,6 +33,4 @@ public class CharacterInventoryController : MonoBehaviour
         _itemType = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex].ItemType;
         _itemCount = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex].ItemCount;
     }
-
-
 }

@@ -6,6 +6,7 @@ public class DiceSpawnController : MonoBehaviour
 {
     private int _diceCount = 2;
     private List<Dice> _dices = new List<Dice>();
+
     [SerializeField] private Dice _dicePrefab;
     [SerializeField] private List<Transform> _spawnPositions;
     [SerializeField] private ParentConstraint _parentConstraint;

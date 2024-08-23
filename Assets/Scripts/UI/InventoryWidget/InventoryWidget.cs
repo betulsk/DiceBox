@@ -5,6 +5,7 @@ using UnityEngine;
 public class InventoryWidget : MonoBehaviour
 {
     private Dictionary<EItemType, InventoryGroup> _itemTypeToInventoryGroups = new Dictionary<EItemType, InventoryGroup>();
+
     [SerializeField] private InventoryGroup _inventoryGroup;
     [SerializeField] private Transform _groupParentTransform;
 

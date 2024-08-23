@@ -19,8 +19,11 @@ public class CameraMovementController : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
-        GameManager.Instance.OnDiceStopped -= OnDiceStopped;
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
+            GameManager.Instance.OnDiceStopped -= OnDiceStopped;
+        }
     }
 
     private void OnDiceDataSet()

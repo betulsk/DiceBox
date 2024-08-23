@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "GameConfig",
    menuName = "GameConfig/Create a GameConfig",
@@ -18,5 +16,4 @@ public class GameConfig : ScriptableObject
     public int BoardMaxValue => _boardMaxValue;
 
     [SerializeField] public SerializableDictionary<EItemType, Sprite> ItemTypesToImages;
-
 }

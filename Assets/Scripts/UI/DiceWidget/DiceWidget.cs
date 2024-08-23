@@ -20,6 +20,10 @@ public class DiceWidget : MonoBehaviour
     {
         _firstInputField.onEndEdit.RemoveListener(OnFirstFieldEndEdit);
         _secondInputField.onEndEdit.RemoveListener(OnSecondFieldEndEdit);
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.OnMovementCompleted -= OnMovementCompleted;
+        }
     }
 
     private void OnMovementCompleted()

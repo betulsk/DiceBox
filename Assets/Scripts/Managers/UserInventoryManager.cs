@@ -55,12 +55,4 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
     {
         return _userInventoryTrackableData.UserInventoryDatas;
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            _userInventoryTrackableData.UpdateInventoryData(EItemType.Apple, 8, _filePath);
-        }
-    }
 }

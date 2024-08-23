@@ -11,7 +11,6 @@ public class UserInventoryTrackableData : MonoBehaviour
         if(File.Exists(filePath))
         {
             Debug.Log("File is exist.");
-            //UserInventoryDatas = JSONDataIO.Instance.ReadFromJson<UserInventoryTrackData>(filePath);
             return true;
         }
         else
