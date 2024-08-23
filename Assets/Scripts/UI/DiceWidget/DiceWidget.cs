@@ -6,6 +6,7 @@ public class DiceWidget : MonoBehaviour
     private int _diceMaxValue = 6;
     [SerializeField] private TMP_InputField _firstInputField;
     [SerializeField] private TMP_InputField _secondInputField;
+    [SerializeField] private Transform _totalDataImageTransform;
     [SerializeField] private TMP_Text _totalDataText;
 
     private void Start()
@@ -80,13 +81,14 @@ public class DiceWidget : MonoBehaviour
         _secondInputField.interactable = false;
         GameManager.Instance.DiceDatas.TotalData = GameManager.Instance.DiceDatas.FirstData + GameManager.Instance.DiceDatas.SecondData;
         _totalDataText.text = GameManager.Instance.DiceDatas.TotalData.ToString();
+        _totalDataImageTransform.gameObject.SetActive(true);
         GameManager.Instance.OnDiceDataSet?.Invoke();
     }
 
     private void ActivateInputFields()
     {
         _totalDataText.text = "";
-
+        _totalDataImageTransform.gameObject.SetActive(false);
         _firstInputField.text = string.Empty;
         _secondInputField.text = string.Empty;
         //GameManager.Instance.ResetDiceData();
