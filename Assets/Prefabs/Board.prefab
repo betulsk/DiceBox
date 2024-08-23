@@ -112,7 +112,7 @@ MonoBehaviour:
   _pieces:
   - {fileID: 5171354975029999336}
   _pieceParentTransform: {fileID: 4417794941516262395}
-  _pieceZOffset: 1
+  _pieceZOffset: 1.5
 --- !u!1 &8872681440317258556
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 711586576160025553, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 711586576160025553, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}
       propertyPath: m_LocalRotation.w
