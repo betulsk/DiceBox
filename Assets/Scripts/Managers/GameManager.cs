@@ -9,4 +9,9 @@ public class GameManager : Singleton<GameManager>
     public Action OnDiceDataSet;
     public Action OnDiceStopped;
     public Action OnMovementCompleted;
+
+    public void ResetDiceData()
+    {
+        DiceDatas = new DiceDatas();
+    }
 }

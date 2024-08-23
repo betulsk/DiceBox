@@ -79,6 +79,9 @@ public class DiceWidget : MonoBehaviour
 
     private void ActivateInputFields()
     {
+        _firstInputField.text = string.Empty;
+        _secondInputField.text = string.Empty;
+        GameManager.Instance.ResetDiceData();
         _firstInputField.interactable = true;
         _secondInputField.interactable = true;
     }
