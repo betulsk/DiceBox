@@ -12,6 +12,7 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
     private float _initSpeed = 4;
 
     [SerializeField] private Character _character;
+    [SerializeField] private ParticleSystem _dustParticle;
     [SerializeField] private float _jumpPower;
     [SerializeField] private float _movementSpeed = 10;
 
@@ -72,6 +73,7 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
             yield return null;
         }
         _movementSpeed = _initSpeed;
+        _dustParticle.Play();
         onComplete?.Invoke();
     }
 
