@@ -20,7 +20,7 @@ public class BoardPieceSpawner : MonoBehaviour
             _zValue += _pieceZOffset;
             CreateRandomData(piece);
             _pieces.Add(piece);
-            GameManager.Instance.BoardPieces.Add(piece);
+            GameManager.Instance.BoardPieces = _pieces;
         }
         callBack?.Invoke();
     }

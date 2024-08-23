@@ -12,12 +12,18 @@ public class DiceWidget : MonoBehaviour
     {
         _firstInputField.onEndEdit.AddListener(OnFirstFieldEndEdit);
         _secondInputField.onEndEdit.AddListener(OnSecondFieldEndEdit);
+        GameManager.Instance.OnMovementCompleted += OnMovementCompleted;
     }
 
     private void OnDestroy()
     {
         _firstInputField.onEndEdit.RemoveListener(OnFirstFieldEndEdit);
         _secondInputField.onEndEdit.RemoveListener(OnSecondFieldEndEdit);
+    }
+
+    private void OnMovementCompleted()
+    {
+        ActivateInputFields();
     }
 
     private void OnFirstFieldEndEdit(string firstStr)

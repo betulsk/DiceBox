@@ -8,4 +8,5 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public List<BoardPiece> BoardPieces;
     public Action OnDiceDataSet;
     public Action OnDiceStopped;
+    public Action OnMovementCompleted;
 }

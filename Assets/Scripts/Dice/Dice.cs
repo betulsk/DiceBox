@@ -28,7 +28,10 @@ public class Dice : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
+        if(GameManager.Instance != null)
+        {
+            GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
+        }
     }
 
     private void Update()

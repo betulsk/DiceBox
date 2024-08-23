@@ -7,6 +7,7 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
 {
     private Coroutine _jumpRoutine;
     private int _stepCount = 0;
+    private float _initSpeed = 4;
 
     [SerializeField] private Character _character;
     [SerializeField] private float _jumpPower;
@@ -15,12 +16,9 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
     public Action OnMovementStarted;
     public Action OnMovementStop;
 
-    private void Update()
+    private void Awake()
     {
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            MoveCustomActions(GameManager.Instance.BoardPieces);
-        }
+        _initSpeed = _movementSpeed;
     }
 
     public override void MoveCustomActions(List<BoardPiece> targetTransforms)
@@ -35,10 +33,16 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
                 _stepCount = 0;
                 StopCoroutine(_jumpRoutine);
                 OnMovementStop?.Invoke();
+                GameManager.Instance.OnMovementCompleted?.Invoke();
                 return;
             }
             Debug.Log("!!_StepCount is and Jump" + _stepCount);
             StopCoroutine(_jumpRoutine);
+            if(_character.TileCount >= targetTransforms.Count)
+            {
+                _character.TileCount = 0;
+                _movementSpeed *= 2f;
+            }
             MoveCustomActions(targetTransforms);
         }));
 
@@ -69,6 +73,9 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
             yield return null;
         }
         _character.TileCount++;
+        Debug.Log($"!Jump finished: {_character.TileCount}");
+        _movementSpeed = _initSpeed;
+
         onComplete?.Invoke();
     }
 }
