@@ -35,6 +35,8 @@ public class DiceWidget : MonoBehaviour
         int.TryParse(firstStr, out int parseValue);
         GameManager.Instance.DiceDatas.FirstData = parseValue;
         GameManager.Instance.DiceDatas.FirstDataSet = true;
+        GameManager.Instance.DiceDataList.Add(parseValue);
+
         if(TryDeactivateFields())
         {
             DeactivateInputFields();
@@ -52,6 +54,8 @@ public class DiceWidget : MonoBehaviour
         int.TryParse(secondStr, out int parseValue);
         GameManager.Instance.DiceDatas.SecondData = parseValue;
         GameManager.Instance.DiceDatas.SecondDataSet = true;
+        GameManager.Instance.DiceDataList.Add(parseValue);
+
         if(TryDeactivateFields())
         {
             DeactivateInputFields();
@@ -83,6 +87,7 @@ public class DiceWidget : MonoBehaviour
         GameManager.Instance.ResetDiceData();
         _firstInputField.interactable = true;
         _secondInputField.interactable = true;
+
     }
 
     private bool TryChangeData(string diceString)

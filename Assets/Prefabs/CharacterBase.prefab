@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9129388278209785538}
   - component: {fileID: 8421173259894776103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CharacterInventoryController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4360451087184881026}
   - component: {fileID: 4154147545611149856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CharacterBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementBehaviour: {fileID: 5823553510965192724}
   _characterInventoryController: {fileID: 8421173259894776103}
-  TileCount: 0
+  CurrentBoardIndex: 0
 --- !u!1 &4616739636832162220
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7916522087067629064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Behaviours
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3463861927092259471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545348340503810853}
   - component: {fileID: 5823553510965192724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovementBehaviours
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075245581883408209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,6 +249,10 @@ PrefabInstance:
     - target: {fileID: 1251484254703028, guid: 1e68cdf33fb6e934a8f4c3b37fe3c3b4, type: 3}
       propertyPath: m_Name
       value: pawn_D_grey
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251484254703028, guid: 1e68cdf33fb6e934a8f4c3b37fe3c3b4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4063092574113466, guid: 1e68cdf33fb6e934a8f4c3b37fe3c3b4, type: 3}
       propertyPath: m_LocalPosition.x

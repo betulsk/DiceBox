@@ -10,6 +10,7 @@ public struct DiceDatas
     public bool FirstDataSet;
     public bool SecondDataSet;
     public int TotalData;
+    public List<int> DiceDataList;
 }
 
 public class Dice : MonoBehaviour
@@ -20,71 +21,14 @@ public class Dice : MonoBehaviour
 
     [SerializeField] private float _throwForce;
     [SerializeField] private float _rollForce;
-
-    private void Start()
+    
+    public void RollDice(int diceData, Action callBack = null)
     {
-        GameManager.Instance.OnDiceDataSet += OnDiceDataSet;
-    }
-
-    private void OnDestroy()
-    {
-        if(GameManager.Instance != null)
+        _diceAnimationController.Animator.enabled = true;
+        _diceAnimationController.PlayAnim((EAnim)diceData);
+        StartCoroutine(this.WaitForSeconds(1f, () =>
         {
-            GameManager.Instance.OnDiceDataSet -= OnDiceDataSet;
-        }
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            RollDice();
-        }
-    }
-
-    private void OnDiceDataSet()
-    {
-        RollDice();
-    }
-
-    public void GetNumberOnTop()
-    {
-        if(_diceFaces == null)
-        {
-            return;
-        }
-        var topFace = 0;
-        var lastYPosition = _diceFaces[0].position.y;
-
-        for(int i = 0; i < _diceFaces.Count; i++)
-        {
-            if(_diceFaces[i].position.y > lastYPosition)
-            {
-                lastYPosition = _diceFaces[i].position.y;
-                topFace = i;
-            }
-        }
-    }
-
-    private void RollDice()
-    {
-        var randomVariance = UnityEngine.Random.Range(-1f, 1f);
-        _rigidbody.AddForce(-_rigidbody.gameObject.transform.up * (_throwForce + randomVariance), ForceMode.Impulse);
-        var randX = UnityEngine.Random.Range(0f, 1f);
-        var randY = UnityEngine.Random.Range(0f, 1f);
-        var randZ = UnityEngine.Random.Range(0f, 1f);
-        _rigidbody.AddTorque(new Vector3(randX, randY, randZ) * (_rollForce + randomVariance), ForceMode.Impulse);
-        GameManager.Instance.OnDiceStopped?.Invoke();
-        StartCoroutine(this.WaitForSeconds(5f, () =>
-        {
-            StopRolling();
-            //_diceAnimationController.Animator.enabled = true;
-            //_diceAnimationController.PlayAnim(EAnim.Dice_3);
+            callBack?.Invoke();
         }));
-    }
-
-    public void StopRolling()
-    {
-        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

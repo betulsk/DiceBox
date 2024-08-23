@@ -6,6 +6,9 @@ public class GameManager : Singleton<GameManager>
 {
     [SerializeField] public DiceDatas DiceDatas = new DiceDatas();
     [SerializeField] public List<BoardPiece> BoardPieces;
+
+    public List<int> DiceDataList;
+
     public Action OnDiceDataSet;
     public Action OnDiceStopped;
     public Action OnMovementCompleted;
@@ -13,5 +16,6 @@ public class GameManager : Singleton<GameManager>
     public void ResetDiceData()
     {
         DiceDatas = new DiceDatas();
+        DiceDataList.Clear();
     }
 }
