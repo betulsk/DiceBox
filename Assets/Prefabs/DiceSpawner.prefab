@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3967954885451674286}
   - component: {fileID: 2184642288795857899}
-  - component: {fileID: 3111412603514315088}
+  - component: {fileID: 8835654095663741657}
   m_Layer: 0
   m_Name: DiceSpawner
   m_TagString: Untagged
@@ -243,10 +243,10 @@ MonoBehaviour:
   _spawnPositions:
   - {fileID: 5308760673943001953}
   - {fileID: 7606142786185166260}
-  _parentConstraint: {fileID: 3111412603514315088}
+  _parentConstraint: {fileID: 8835654095663741657}
   _spawnTransform: {fileID: 2527698082533021484}
   _randomRange: 1.2
---- !u!1773428102 &3111412603514315088
+--- !u!1773428102 &8835654095663741657
 ParentConstraint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,20 +256,20 @@ ParentConstraint:
   m_Enabled: 1
   serializedVersion: 2
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationAtRest: {x: 0, y: -0.000207901, z: -0.00013542175}
+  m_RotationAtRest: {x: 0.0007832047, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: -1.6442864, z: 13.362874}
   m_RotationOffsets:
-  - {x: 0, y: 0, z: 0}
+  - {x: -36.089233, y: 0, z: 0}
   m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
+  m_AffectTranslationY: 0
   m_AffectTranslationZ: 1
   m_AffectRotationX: 1
-  m_AffectRotationY: 1
+  m_AffectRotationY: 0
   m_AffectRotationZ: 1
-  m_Active: 0
-  m_IsLocked: 0
+  m_Active: 1
+  m_IsLocked: 1
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1

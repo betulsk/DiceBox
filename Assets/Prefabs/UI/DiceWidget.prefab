@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter number
+  m_text: Second Roll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1ed6015f6da1d54893f392f9c1e9828, type: 2}
   m_sharedMaterial: {fileID: 1758171042456113373, guid: f1ed6015f6da1d54893f392f9c1e9828, type: 2}
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter number
+  m_text: First Roll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1ed6015f6da1d54893f392f9c1e9828, type: 2}
   m_sharedMaterial: {fileID: 1758171042456113373, guid: f1ed6015f6da1d54893f392f9c1e9828, type: 2}

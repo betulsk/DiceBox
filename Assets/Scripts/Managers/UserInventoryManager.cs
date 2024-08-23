@@ -26,8 +26,8 @@ public class UserInventoryManager : Singleton<UserInventoryManager>
             for(int i = 0; i < itemTypes.Count; i++)
             {
                 _userInventoryTrackableData.UpsertItemCountByType(itemTypes[i], 0, _filePath);
-                OnInventoryDataLoaded?.Invoke();
             }
+            OnInventoryDataLoaded?.Invoke();
         }
         else
         {

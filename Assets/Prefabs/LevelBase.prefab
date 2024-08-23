@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4437553376669308344}
   - component: {fileID: 1356461123818940083}
   - component: {fileID: 1946297738857967094}
-  - component: {fileID: 7708188931719281099}
   - component: {fileID: 5169493875464521406}
+  - component: {fileID: 8552432833982587289}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21472479784136112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27039933, y: -0, z: -0, w: 0.9627483}
-  m_LocalPosition: {x: 0, y: 8.96, z: -13.65}
+  m_LocalRotation: {x: 0.30976412, y: -0, z: -0, w: 0.9508134}
+  m_LocalPosition: {x: 0, y: 9.2, z: -9.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3600835038050686182}
-  m_LocalEulerAnglesHint: {x: 37.124, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 36.09, y: 0, z: 0}
 --- !u!20 &1356461123818940083
 Camera:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 25
+  field of view: 34.8
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -94,33 +94,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21472479784136112}
   m_Enabled: 1
---- !u!1773428102 &7708188931719281099
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21472479784136112}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 8.96, z: -13.65}
-  m_RotationAtRest: {x: 31.376102, y: 0, z: 0}
-  m_TranslationOffsets:
-  - {x: 0, y: 8.96, z: -12.15}
-  m_RotationOffsets:
-  - {x: 31.376102, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 0
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 0
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 0
-  m_Sources:
-  - sourceTransform: {fileID: 3984084497763271448}
-    weight: 1
 --- !u!114 &5169493875464521406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +109,33 @@ MonoBehaviour:
   _mainCamera: {fileID: 1356461123818940083}
   _fovValue: 45
   _transitionSpeed: 5
+--- !u!1773428102 &8552432833982587289
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21472479784136112}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 9.2, z: -9.83}
+  m_RotationAtRest: {x: 36.09004, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 9.2, z: -8.33}
+  m_RotationOffsets:
+  - {x: 36.09005, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 0
+  m_AffectTranslationZ: 1
+  m_AffectRotationX: 1
+  m_AffectRotationY: 0
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 3984084497763271448}
+    weight: 1
 --- !u!1 &455982409622782825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 4437553376669308344}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000207901
+      value: -0.00020885468
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00013542175
+      value: -0.00014019012
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000068347535
+      value: 0.0000070220067
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1316,12 +1316,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8835654095663741657, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 4437553376669308344}
     - target: {fileID: 8903567068722263965, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 4437553376669308344}
     m_RemovedComponents:
-    - {fileID: 8903567068722263965, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
