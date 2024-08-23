@@ -24,7 +24,7 @@ public class CharacterInventoryController : MonoBehaviour
 
     private void FindInventoryDatas()
     {
-        _itemType = GameManager.Instance.BoardPieces[_character.TileCount - 1].ItemType;
-        _itemCount = GameManager.Instance.BoardPieces[_character.TileCount - 1].ItemCount;
+        _itemType = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex - 1].ItemType;
+        _itemCount = GameManager.Instance.BoardPieces[_character.CurrentBoardIndex - 1].ItemCount;
     }
 }

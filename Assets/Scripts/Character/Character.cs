@@ -9,7 +9,7 @@ public class Character : Singleton<Character>
     public CharacterMovementBehaviour MovementBehaviour => _movementBehaviour;
     public CharacterInventoryController CharacterInventoryController => _characterInventoryController;
 
-    public int TileCount = 0;
+    public int CurrentBoardIndex = 0;
 
     public Action<int> OnMovementFinished;
 

@@ -68,18 +68,15 @@ public class Dice : MonoBehaviour
 
     private void RollDice()
     {
-        Debug.Log("!RollDice");
         var randomVariance = UnityEngine.Random.Range(-1f, 1f);
         _rigidbody.AddForce(-_rigidbody.gameObject.transform.up * (_throwForce + randomVariance), ForceMode.Impulse);
         var randX = UnityEngine.Random.Range(0f, 1f);
         var randY = UnityEngine.Random.Range(0f, 1f);
         var randZ = UnityEngine.Random.Range(0f, 1f);
         _rigidbody.AddTorque(new Vector3(randX, randY, randZ) * (_rollForce + randomVariance), ForceMode.Impulse);
-        Debug.Log("!Next step is anim");
         GameManager.Instance.OnDiceStopped?.Invoke();
         StartCoroutine(this.WaitForSeconds(5f, () =>
         {
-            Debug.Log("!Anim must play");
             StopRolling();
             //_diceAnimationController.Animator.enabled = true;
             //_diceAnimationController.PlayAnim(EAnim.Dice_3);

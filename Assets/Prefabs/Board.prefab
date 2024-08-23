@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _piecePrefab: {fileID: 4073808169550399224, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}
-  _pieces: []
+  _pieces:
+  - {fileID: 5171354975029999336}
   _pieceParentTransform: {fileID: 4417794941516262395}
   _pieceZOffset: 1
 --- !u!1 &8872681440317258556
@@ -220,6 +221,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}
+--- !u!114 &5171354975029999336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4073808169550399224, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}
+  m_PrefabInstance: {fileID: 9173063888151670800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313210a2a8e1a6a4baed3dd0fc155213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8551584974267620289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 711586576160025553, guid: 87354aacbf1472e4e85c0f1917633d8b, type: 3}

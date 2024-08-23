@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterMovementBehaviour : BaseMovementBehaviour
 {
     private Coroutine _jumpRoutine;
+    private List<BoardPiece> _targetTransforms = new List<BoardPiece>();
     private int _stepCount = 0;
     private float _initSpeed = 4;
 
@@ -23,10 +25,12 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
 
     public override void MoveCustomActions(List<BoardPiece> targetTransforms)
     {
+        _targetTransforms = targetTransforms;
         _jumpRoutine = StartCoroutine(JumpToTarget(targetTransforms, () =>
         {
             Debug.Log("!!JumpCompleted");
             _stepCount++;
+
             if(_stepCount >= GameManager.Instance.DiceDatas.TotalData)
             {
                 Debug.Log("!!_StepCount is " + _stepCount);
@@ -38,11 +42,11 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
             }
             Debug.Log("!!_StepCount is and Jump" + _stepCount);
             StopCoroutine(_jumpRoutine);
-            if(_character.TileCount >= targetTransforms.Count)
-            {
-                _character.TileCount = 0;
-                _movementSpeed *= 2f;
-            }
+            //if(_character.CurrentBoardIndex >= targetTransforms.Count)
+            //{
+            //    _character.CurrentBoardIndex = 0;
+            //    _movementSpeed *= 2f;
+            //}
             MoveCustomActions(targetTransforms);
         }));
 
@@ -50,8 +54,10 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
 
     private IEnumerator JumpToTarget(List<BoardPiece> targetTransforms, Action onComplete = null)
     {
+        _character.CurrentBoardIndex++;
         Vector3 startPosition = _character.transform.position;
-        Vector3 targetPosition = targetTransforms[_character.TileCount].TargetPoint.position;
+        SetTargetPiece();
+        Vector3 targetPosition = targetTransforms[_character.CurrentBoardIndex].TargetPoint.position;
         Vector3 handlePosition = Vector3.Lerp(startPosition, targetPosition, 0.5f);
         handlePosition.y += _jumpPower;
 
@@ -72,10 +78,19 @@ public class CharacterMovementBehaviour : BaseMovementBehaviour
 
             yield return null;
         }
-        _character.TileCount++;
-        Debug.Log($"!Jump finished: {_character.TileCount}");
+        Debug.Log($"!Jump finished: {_character.CurrentBoardIndex}");
         _movementSpeed = _initSpeed;
 
         onComplete?.Invoke();
+    }
+
+    private void SetTargetPiece()
+    {
+        if(_character.CurrentBoardIndex == _targetTransforms.Count)
+        {
+            _character.CurrentBoardIndex = 0;
+            _movementSpeed *= 2f;
+
+        }
     }
 }
