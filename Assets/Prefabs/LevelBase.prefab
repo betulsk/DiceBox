@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21472479784136112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27039546, y: -0, z: -0, w: 0.96274936}
+  m_LocalRotation: {x: 0.27039933, y: -0, z: -0, w: 0.9627483}
   m_LocalPosition: {x: 0, y: 8.96, z: -13.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -105,11 +105,11 @@ ParentConstraint:
   serializedVersion: 2
   m_Weight: 1
   m_TranslationAtRest: {x: 0, y: 8.96, z: -13.65}
-  m_RotationAtRest: {x: 31.375635, y: 0, z: 0}
+  m_RotationAtRest: {x: 31.376102, y: 0, z: 0}
   m_TranslationOffsets:
   - {x: 0, y: 8.96, z: -12.15}
   m_RotationOffsets:
-  - {x: 31.375647, y: 0, z: 0}
+  - {x: 31.376102, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 0
   m_AffectTranslationZ: 1
@@ -133,7 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d98095ffe393d74b9d54e3879e455a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
+  _mainCamera: {fileID: 1356461123818940083}
+  _fovValue: 45
+  _transitionSpeed: 5
 --- !u!1 &455982409622782825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 4437553376669308344}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000098228455
+      value: -0.000207901
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00006389618
+      value: -0.00013542175
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000028088025
+      value: 0.0000068347535
       objectReference: {fileID: 0}
     - target: {fileID: 3967954885451674286, guid: 81a23a6a45025384f8f4cf6e993cf177, type: 3}
       propertyPath: m_LocalRotation.z

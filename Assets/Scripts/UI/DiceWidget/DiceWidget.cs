@@ -22,6 +22,7 @@ public class DiceWidget : MonoBehaviour
 
     private void OnMovementCompleted()
     {
+        GameManager.Instance.ResetDiceData();
         ActivateInputFields();
     }
 
@@ -84,10 +85,9 @@ public class DiceWidget : MonoBehaviour
     {
         _firstInputField.text = string.Empty;
         _secondInputField.text = string.Empty;
-        GameManager.Instance.ResetDiceData();
+        //GameManager.Instance.ResetDiceData();
         _firstInputField.interactable = true;
         _secondInputField.interactable = true;
-
     }
 
     private bool TryChangeData(string diceString)

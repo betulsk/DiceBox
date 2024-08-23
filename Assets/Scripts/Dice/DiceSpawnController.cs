@@ -47,7 +47,7 @@ public class DiceSpawnController : MonoBehaviour
             _dices.Add(dice);
             dice.RollDice(GameManager.Instance.DiceDataList[i]);
         }
-        StartCoroutine(this.WaitForSeconds(1.1f, () =>
+        StartCoroutine(this.WaitForSeconds(2f, () =>
         {
             GameManager.Instance.OnDiceStopped?.Invoke();
         }));
